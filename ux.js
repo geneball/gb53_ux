@@ -33,6 +33,12 @@
 			Log.i("version: %s -- gb53.net user experience utilities", Version);
 		}
 	
+	exports.msg = 
+		function msg(){
+			var s = sprintf.apply(null, arguments);
+			$('#gb53_status').text(s);
+		}
+
 	/** generate html for user text input
 	 * @parm {string} string displayed before value
 	 * @parm {string} id for input element 
@@ -162,7 +168,7 @@ exports.genSelect =
 		var html = sprintf('<label id="lab_%s">%s <select class="%s" id="%s">', id, prompt, cls, id);
 		var vals = valstr.split(',')
 		var sel = UX.selectVal(id);
-		if (sel!=undefined) defval = sel;
+		if (sel!=undefined) defval = sel;	// if regenerating html, don't change current selection
 		for (var i in vals){
 			var v = vals[i].split('|');
 			if (v.length==1) v.push(v[0]);
@@ -171,6 +177,10 @@ exports.genSelect =
 		return html + '</select></label>';
 	}
 
+exports.setSelect = 
+	function setSelect(id, val){
+		$('#'+id).val( val ).change();
+	}
 
 	/** generate html for range input
 	 * @parm {string} string displayed before value
