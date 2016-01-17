@@ -121,7 +121,7 @@ exports.genRadio =
 	function genRadio(label, id, cls, valstr, defval){
 		var html = sprintf('<label id="lab_%s">%s ', id, label, id, cls, id);
 		var vals = valstr.split(',')
-		var sel = radioVal(id);
+		var sel = UX.radioVal(id);
 		if (sel!=undefined) defval = sel;
 		for (var i in vals){
 			html += sprintf('<input type="radio" name="%s" value="%s" class="%s"%s>%s &nbsp;', id, vals[i],cls,vals[i]==defval? ' checked':'', vals[i]);
