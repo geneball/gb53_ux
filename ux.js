@@ -61,7 +61,7 @@
 	 */
 	exports.genButton =	
 		function genButton(prompt, id, cls){
-			var html = sprintf('<button id="%s" class="%s">%s</label>', 
+			var html = sprintf('<button id="%s" class="%s">%s</button>', 
 					id, cls, prompt);
 			return html;
 		}
@@ -137,7 +137,8 @@ exports.genRadio =
 exports.radioVal =	
 	function radioVal(id, asnum){ 
 	    asnum = asnum || false;
-		var v = $('input[name='+id+']:checked').val(); 
+		var v = $('input[name='+id+']:checked');
+		v = v.val(); 
 		if (asnum) v = parseFloat(v); 
 		return v;
 	}
@@ -150,7 +151,9 @@ exports.radioVal =
 exports.selectVal =	
 	function selectVal(id, asnum){ 
 	    asnum = asnum || false;
-		var v = $('#'+id+' option:selected').text(); 
+		var v = $('#'+id+' option');
+		v = v.filter(':selected');
+		v = v.text(); 
 		if (asnum) v = parseFloat(v); 
 		return v;
 	}
@@ -168,7 +171,7 @@ exports.genSelect =
 		var html = sprintf('<label id="lab_%s">%s <select class="%s" id="%s">', id, prompt, cls, id);
 		var vals = valstr.split(',')
 		var sel = UX.selectVal(id);
-		if (sel!=undefined) defval = sel;	// if regenerating html, don't change current selection
+		if (sel!='') defval = sel;	// if regenerating html, don't change current selection
 		for (var i in vals){
 			var v = vals[i].split('|');
 			if (v.length==1) v.push(v[0]);
