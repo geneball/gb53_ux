@@ -153,7 +153,7 @@ exports.selectVal =
 	    asnum = asnum || false;
 		var v = $('#'+id+' option');
 		v = v.filter(':selected');
-		v = v.text(); 
+		v = v.val(); 
 		if (asnum) v = parseFloat(v); 
 		return v;
 	}
