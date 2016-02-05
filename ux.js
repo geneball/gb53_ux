@@ -124,7 +124,9 @@ exports.genRadio =
 		var sel = UX.radioVal(id);
 		if (sel!=undefined) defval = sel;
 		for (var i in vals){
-			html += sprintf('<input type="radio" name="%s" value="%s" class="%s"%s>%s &nbsp;', id, vals[i],cls,vals[i]==defval? ' checked':'', vals[i]);
+			var v = vals[i].split('|');
+			if (v.length==1) v.push(v[0]);
+			html += sprintf('<input type="radio" name="%s" value="%s" class="%s"%s>%s &nbsp;', id, v[1],cls,v[0]==defval? ' checked':'', v[0]);
 		}
 		return html + '</label>';
 	}
