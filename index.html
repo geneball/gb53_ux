@@ -1,8 +1,12 @@
-<!-- #index.html  -->
+<!-- 
+	gb53.net  
+	universal module page
+	Gene Ball Feb2016
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<Title>GB53.net UX Module Page</Title>
+	<Title>GB53.net module</Title>
 	<link rel="icon" href="../img/gb53.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="../css/gb53.css">
     <script src="jspm_packages/system.js"></script>
@@ -12,8 +16,15 @@
     </script>
 </head>
 <body>
-	<div id='gb53_vals'> 	</div>
-	<div id='gb53_status_bar'><label id='lab_gb53_status'>Status: <span id='gb53_status'> Started. </span></label></div>
-	<canvas id="renderCanvas"></canvas>
+<div id='gb53_status'>
+	<div> <span id='gb53_msg'>loading...</span></div>
+</div>
+
+<h1> <span id='gb53_header'> gb53 module: </span></h1>
+<div id='gb53_prompt'>Type <b>&lt;ctl&gt;&lt;sh&gt;L</b> to see Log with all version numbers</div>
+<div id='gb53_vals'> </div>
+</div>
+<hr>
+
 </body>
 </html>

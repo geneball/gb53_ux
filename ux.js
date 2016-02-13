@@ -2,12 +2,15 @@
  * gb53.net User Experience utilities module 
  * @module gb53_ux
  */
+
+// for use with jspm & nwjs
+
 'use strict';
 import $ from 'jquery';
 import sprintf from 'sprintf';
-//import Log from 'gb53_log';
+import * as Log from '../log/log';
 	
-var Version = 'gb53_ux.js 8-Feb-16';
+var Version = 'gb53_ux.js 12-Feb-16';
 	
 /** get Version string
  * @returns {string} version as 'filename.js date'
@@ -19,8 +22,7 @@ export function Version(){
 /** initialize UX
  */
 export function init() {
-	//Log.i(
-	console.log("version: %s -- gb53.net user experience utilities", Version);
+	Log.i("version: %s -- gb53.net user experience utilities", Version);
 }
 
 /** set #gb53_status with message (sprintf arguments)
@@ -107,7 +109,7 @@ export function genMsg(prompt, id, cls, initval){
 export function genRadio(label, id, cls, valstr, defval){
 	var html = sprintf('<label id="lab_%s">%s ', id, label, id, cls, id);
 	var vals = valstr.split(',')
-	var sel = UX.radioVal(id);
+	var sel = Ux.radioVal(id);
 	if (sel!=undefined) defval = sel;
 	for (var i in vals){
 		var v = vals[i].split('|');
@@ -155,7 +157,7 @@ export function selectVal(id, asnum){
 export function genSelect(prompt, id, cls, valstr, defval){
 	var html = sprintf('<label id="lab_%s">%s <select class="%s" id="%s">', id, prompt, cls, id);
 	var vals = valstr.split(',')
-	var sel = UX.selectVal(id);
+	var sel = Ux.selectVal(id);
 	if (sel!='') defval = sel;	// if regenerating html, don't change current selection
 	for (var i in vals){
 		var v = vals[i].split('|');

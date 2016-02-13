@@ -9,6 +9,7 @@
   "jspm": {
     "dependencies": {
       "jquery": "npm:jquery@^2.2.0",
+      "moment": "npm:moment@^2.11.2",
       "qunit": "github:jquery/qunit@^1.21.0",
       "sprintf": "npm:sprintf@^0.1.5"
     },
