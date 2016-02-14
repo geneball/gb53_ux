@@ -9,20 +9,21 @@
 import $ from 'jquery';
 import sprintf from 'sprintf';
 import * as Log from '../log/log';
+import * as Ux from '../ux/ux';
 	
-var Version = 'gb53_ux.js 12-Feb-16';
+var sVersion = 'gb53_ux.js 12-Feb-16';
 	
 /** get Version string
  * @returns {string} version as 'filename.js date'
  */
 export function Version(){ 
-	return Version; 
+	return sVersion; 
 };
 	
 /** initialize UX
  */
 export function init() {
-	Log.i("version: %s -- gb53.net user experience utilities", Version);
+	Log.i("version: %s", sVersion);
 }
 
 /** set #gb53_status with message (sprintf arguments)
