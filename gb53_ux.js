@@ -8,10 +8,10 @@
 'use strict';
 import $ from 'jquery';
 import sprintf from 'sprintf';
-import * as Log from '../log/log';
-import * as Ux from '../ux/ux';
+import * as Log from '../log/gb53_log';
+import * as Ux from '../ux/gb53_ux';
 	
-var sVersion = 'gb53_ux.js 12-Feb-16';
+var sVersion = 'gb53_ux.js 25-Feb-16';
 	
 /** get Version string
  * @returns {string} version as 'filename.js date'
