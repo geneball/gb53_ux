@@ -1,7 +1,7 @@
 {
   "name": "gb53_ux",
   "registry": "jspm",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "gb53.net UX module",
   "main": "index.html",
   "scripts": {
@@ -9,13 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://bitbucket.org/geneball/gb53_ux"
+    "url": "https://github.com/geneball/gb53_ux"
   },
   "author": "Gene Ball",
   "license": "MIT",
   "jspm": {
     "dependencies": {
       "gb53_log": "github:geneball/gb53_log@master",
+      "gb53_ux": "github:geneball/gb53_ux@master",
       "jquery": "npm:jquery@^2.2.0",
       "moment": "npm:moment@^2.11.2",
       "qunit": "github:jquery/qunit@^1.21.0",
